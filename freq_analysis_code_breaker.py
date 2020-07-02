@@ -1,14 +1,11 @@
 import re
 import string, random
 # break ceaser cipher with sequency analysis
-#original_sentence = "The Italian mafia is knocking on the door"
 original_sentence = input(">>: ")
 # the lowercase version of the original sentence
 original_sentence_lowercase = original_sentence.lower()
 
 # decryption takes place with lowercase characters
-#encrypted_sentence = "qwr uqpnupm cpgup uz lmdelumx dm qwr bddi"
-
 most_common_words_file = "1-1000.txt"
 
 #Note: usa.txt is the shortest textfile available without Welsh, Scottish, etc. accents, containing only american english words and special abbreviations
@@ -23,7 +20,6 @@ def remove_non_letters(sentence):
 
     return sentence.strip()
 
-print(remove_non_letters(original_sentence))
 
 def encrypt(sentence, ascii_lower):
     charlist = []
@@ -269,6 +265,7 @@ def recursion(sentence):
                 print(i) #sentence is done
 
 original_sentence_lowercase = remove_non_letters(original_sentence_lowercase)
+print("Original sentence:", original_sentence_lowercase)
 encrypted_sentence = encrypt(original_sentence_lowercase, string.ascii_lowercase)
 print("Encrypted sentence:", encrypted_sentence)
 
